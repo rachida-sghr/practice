@@ -5,6 +5,18 @@ import unittest
 
 
 def is_palyndrome(word):
+    """
+    Return True is `word` is a palyndrome, False otherwise.
+    Example:
+
+        >>> is_palyndrome("kayak")
+        True
+        >>> is_palyndrome("not a palyndrome")
+        False
+
+    Note that case is not taken into account: "kaYAK" is considered a
+    palydrome.
+    """
     if not isinstance(word, str):
         raise TypeError("Expected a string")
 
@@ -17,12 +29,20 @@ def is_palyndrome(word):
 
 
 def reverse_string(string):
+    """
+    Return the reverse of the given string.
+    Example:
+
+        >>> reverse_string("woof")
+        "foow"
+    """
     reverse = []
     for char in string:
         reverse.insert(0, char)
     return "".join(reverse)
 
 
+# pylint: disable=missing-docstring,invalid-name,too-few-public-methods
 class TestIsPalyndrom(unittest.TestCase):
 
     def test_reverse_string(self):
